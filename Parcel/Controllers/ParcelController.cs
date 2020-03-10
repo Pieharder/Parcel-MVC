@@ -21,9 +21,10 @@ namespace Parcel.Controllers
     }
 
     [HttpPost("/parcel")]
-    public ActionResult Create(int length, int width)
+    public ActionResult Create(int length, int width, int height, int weight)
     {
-      Item myItem = new Item(length, width);
+      Item myItem = new Item(length, width, height, weight);
+      myItem.Price();
       return RedirectToAction("Index");
     }
   }
