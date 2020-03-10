@@ -1,4 +1,4 @@
-﻿@using Parcels.Models;
+﻿@using Parcel.Models;
 
 <h1>The Not Shitty Parcel Delivery Service</h1>
 
@@ -8,10 +8,9 @@
 }
 @foreach (Item item in Model)
 {
-  <h3>@item.Title</h3>
   <ul>
-    <li>@item.Description</li>
-    <li>@item.Contact</li>
+    <li>@item.ParcelLength</li>
+    <li>@item.ParcelWidth</li>
   </ul>
 }
-<a href="/items/new">Send your package!</a>
+<a href="/parcel/new">Send your package!</a>

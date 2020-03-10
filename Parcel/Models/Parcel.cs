@@ -1,19 +1,17 @@
 using System.Collections.Generic;
 
-namespace Parcels.Models
+namespace Parcel.Models
 {
   public class Item
   {
-    public string Title { get; set; }
-    public string Description { get; set; }
-    public string Contact { get; set; }
+    public int ParcelLength { get; set; }
+    public int ParcelWidth { get; set; }
     private static List<Item> _instances = new List<Item> {};
 
-    public Item (string title, string description, string contact)
+    public Item (int length, int width)
     {
-      Title = title;
-      Description = description;
-      Contact = contact;
+        ParcelLength = length;
+        ParcelWidth = width;
       
       _instances.Add(this);
     }
@@ -27,6 +25,5 @@ namespace Parcels.Models
     {
       _instances.Clear();
     }
-
   }
 }

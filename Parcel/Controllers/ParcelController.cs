@@ -1,5 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
-using JobBoard.Models;
+using Parcel.Models;
 using System.Collections.Generic;
 
 namespace Parcel.Controllers
@@ -7,25 +7,24 @@ namespace Parcel.Controllers
   public class ItemsController : Controller
   {
 
-    [HttpGet("/parcels")]
+    [HttpGet("/parcel")]
     public ActionResult Index()
     {
       List<Item> allItems = Item.GetAll();
       return View(allItems);
     }
 
-    [HttpGet("/parcels/new")]
-    public ActionResult JobForm()
+    [HttpGet("/parcel/new")]
+    public ActionResult Parcel()
     {
       return View();
     }
 
-    [HttpPost("/parcels")]
-    public ActionResult Create(string title, string description, string contact)
+    [HttpPost("/parcel")]
+    public ActionResult Create(int length, int width)
     {
-      Item myItem = new Item(title, description, contact);
+      Item myItem = new Item(length, width);
       return RedirectToAction("Index");
     }
-
   }
 }
